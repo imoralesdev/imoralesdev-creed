@@ -73,6 +73,12 @@ const btnResetLines = document.getElementById("btn-reset-lines");
 const btnShowAnswer = document.getElementById("btn-show-answer");
 const creedSelectEl = document.getElementById("creed-select");
 
+const btnArmyLyrics = document.getElementById("btn-army-lyrics");
+const btnOrdnanceLyrics = document.getElementById("btn-ordnance-lyrics");
+const lyricsArmyEl = document.getElementById("lyrics-army");
+const lyricsOrdnanceEl = document.getElementById("lyrics-ordnance");
+
+
 let currentMode = "study";
 let showAnswer = false;
 
@@ -303,6 +309,28 @@ if (creedSelectEl) {
       updateOverallProgress(0);
     }
   });
+}
+
+// ─────────────────────────────────────
+// SONG LYRICS TOGGLE
+// ─────────────────────────────────────
+function toggleLyrics(el, btn) {
+  if (!el || !btn) return;
+  const isHidden = el.style.display === "" || el.style.display === "none";
+  el.style.display = isHidden ? "block" : "none";
+  btn.textContent = isHidden ? "Hide lyrics" : "Show / hide lyrics";
+}
+
+if (btnArmyLyrics && lyricsArmyEl) {
+  btnArmyLyrics.addEventListener("click", () =>
+    toggleLyrics(lyricsArmyEl, btnArmyLyrics)
+  );
+}
+
+if (btnOrdnanceLyrics && lyricsOrdnanceEl) {
+  btnOrdnanceLyrics.addEventListener("click", () =>
+    toggleLyrics(lyricsOrdnanceEl, btnOrdnanceLyrics)
+  );
 }
 
 // ─────────────────────────────────────
