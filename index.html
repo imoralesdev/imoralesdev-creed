@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>US Army Soldier's Creed Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>
+      <span class="patch">US</span>
+      Soldier's Creed Trainer
+    </h1>
+    <div class="subtitle">
+      Study it. Type it. Beat it. Goal: say it smooth in front of your Drill
+      Sergeant.
+    </div>
 
+    <div class="modes">
+      <button class="mode-btn active" data-mode="study">
+        <span class="dot"></span> Study Mode
+      </button>
+      <button class="mode-btn" data-mode="type">
+        <span class="dot"></span> Type from Memory
+      </button>
+      <button class="mode-btn" data-mode="order">
+        <span class="dot"></span> Line Order Game
+      </button>
+    </div>
+
+    <div class="status-bar">
+      <div class="status-item">
+        <div class="status-label">Progress</div>
+        <span id="status-summary">0% memorized (rough estimate)</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- STUDY MODE -->
+    <div class="card" id="mode-study">
+      <div class="card-title">Study Mode</div>
+      <div class="card-body">
+        <p class="note">
+          Read this out loud several times. Focus on rhythm. Break it into
+          chunks.
+        </p>
+        <div id="creed-text"></div>
+      </div>
+    </div>
+
+    <!-- TYPE MODE -->
+    <div class="card" id="mode-type" style="display: none;">
+      <div class="card-title">Type from Memory</div>
+      <div class="card-body">
+        <p class="note">
+          Try to type the entire Soldier's Creed from memory. I’ll highlight
+          differences word by word.
+        </p>
+        <textarea
+          class="trainer-input"
+          id="user-input"
+          placeholder="Start typing the Soldier's Creed here..."
+        ></textarea>
+        <div class="stats-row">
+          <span class="pill good" id="stat-accuracy">Accuracy: 0%</span>
+          <span class="pill bad" id="stat-errors">Errors: 0</span>
+          <span class="pill neutral" id="stat-coverage">Coverage: 0%</span>
+        </div>
+        <div class="compare-output" id="compare-output">
+          Start typing and I'll compare it to the official creed.
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER MODE -->
+    <div class="card" id="mode-order" style="display: none;">
+      <div class="card-title">Line Order Game</div>
+      <div class="card-body">
+        <p class="note">
+          Click the lines in the correct order. This trains you to remember
+          the flow of the creed.
+        </p>
+        <div class="line-progress" id="line-progress"></div>
+        <div class="line-game" id="line-game"></div>
+        <div class="footer-row">
+          <button class="btn" id="btn-reset-lines">Shuffle Again</button>
+          <span class="note">
+            Green = correct next line. Red = wrong. Aim for a full streak.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <button class="btn secondary" id="btn-show-answer">
+        Toggle Full Text Hint
+      </button>
+      <span class="note">
+        Tip: Practice a couple of times a day. Say it out loud after each round.
+      </span>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
