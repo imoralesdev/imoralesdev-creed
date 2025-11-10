@@ -1,23 +1,55 @@
-// --- Soldier's Creed text (official lines) ---
-const creedLines = [
-  "I am an American Soldier.",
-  "I am a warrior and a member of a team.",
-  "I serve the people of the United States and live the Army Values.",
-  "I will always place the mission first.",
-  "I will never accept defeat.",
-  "I will never quit.",
-  "I will never leave a fallen comrade.",
-  "I am disciplined, physically and mentally tough, trained and proficient in my warrior tasks and drills.",
-  "I always maintain my arms, my equipment and myself.",
-  "I am an expert and I am a professional.",
-  "I stand ready to deploy, engage, and destroy the enemies of the United States of America in close combat.",
-  "I am a guardian of freedom and the American way of life.",
-  "I am an American Soldier."
-];
+// ─────────────────────────────────────
+// CREED DATA
+// ─────────────────────────────────────
+const creeds = {
+  soldier: {
+    id: "soldier",
+    label: "Soldier's Creed",
+    lines: [
+      "I am an American Soldier.",
+      "I am a warrior and a member of a team.",
+      "I serve the people of the United States and live the Army Values.",
+      "I will always place the mission first.",
+      "I will never accept defeat.",
+      "I will never quit.",
+      "I will never leave a fallen comrade.",
+      "I am disciplined, physically and mentally tough, trained and proficient in my warrior tasks and drills.",
+      "I always maintain my arms, my equipment and myself.",
+      "I am an expert and I am a professional.",
+      "I stand ready to deploy, engage, and destroy the enemies of the United States of America in close combat.",
+      "I am a guardian of freedom and the American way of life.",
+      "I am an American Soldier."
+    ]
+  },
 
-const fullCreed = creedLines.join(" ");
+  ordnance: {
+    id: "ordnance",
+    label: "Ordnance Soldier's Creed",
+    // Split into logical sentences/lines for practice & order game
+    lines: [
+      "As an Ordnance Soldier of the United States Army, I will utilize every available talent and means to ensure that superior mobility, firepower, and communications are advantages enjoyed by the United States Army over its enemies.",
+      "As an Ordnance Soldier, I fully understand my duty to perform under adverse conditions and I will continually strive to perfect my craft.",
+      "I will remain flexible so that I can meet any emergency.",
+      "In my conduct, I will abide by the Soldier's code.",
+      "In my support mission in the field, I will use every available skill to maintain superiority; I will always be tactically and technically proficient.",
+      "As an Ordnance soldier, I have no greater task."
+    ]
+  }
+};
 
-// --- DOM references ---
+let currentCreedKey = "soldier";
+
+function getCurrentLines() {
+  return creeds[currentCreedKey].lines;
+}
+
+function getFullCreedText() {
+  return getCurrentLines().join(" ");
+}
+
+// ─────────────────────────────────────
+// DOM REFERENCES
+// ─────────────────────────────────────
 const modeButtons = document.querySelectorAll(".mode-btn");
 const modeStudy = document.getElementById("mode-study");
 const modeType = document.getElementById("mode-type");
@@ -39,25 +71,27 @@ const lineProgressEl = document.getElementById("line-progress");
 const btnResetLines = document.getElementById("btn-reset-lines");
 
 const btnShowAnswer = document.getElementById("btn-show-answer");
+const creedSelectEl = document.getElementById("creed-select");
 
 let currentMode = "study";
 let showAnswer = false;
 
-// --- Render Study Mode text ---
+// ─────────────────────────────────────
+// RENDER STUDY MODE
+// ─────────────────────────────────────
 function renderStudy() {
-  creedTextEl.innerHTML = creedLines
+  const lines = getCurrentLines();
+  creedTextEl.innerHTML = lines
     .map(
       (line, idx) =>
-        `<div class="creed-line"><strong>Line ${
-          idx + 1
-        }:</strong> ${line}</div>`
+        `<div class="creed-line"><strong>Line ${idx + 1}:</strong> ${line}</div>`
     )
     .join("");
 }
 
-renderStudy();
-
-// --- Mode switching ---
+// ─────────────────────────────────────
+// MODE SWITCHING
+// ─────────────────────────────────────
 function setMode(mode) {
   currentMode = mode;
   modeButtons.forEach((btn) => {
@@ -75,7 +109,9 @@ modeButtons.forEach((btn) => {
   });
 });
 
-// --- Helper: compare text ---
+// ─────────────────────────────────────
+// TYPE & COMPARE LOGIC
+// ─────────────────────────────────────
 function compareUserInput() {
   const user = userInputEl.value.trim();
   if (!user) {
@@ -87,7 +123,7 @@ function compareUserInput() {
   }
 
   const userWords = user.split(/\s+/);
-  const targetWords = fullCreed.split(/\s+/);
+  const targetWords = getFullCreedText().split(/\s+/);
 
   const maxLen = Math.max(userWords.length, targetWords.length);
   let correct = 0;
@@ -114,7 +150,8 @@ function compareUserInput() {
 
   compareOutputEl.innerHTML = html.join(" ");
 
-  const accuracy = correct + errors === 0 ? 0 : (correct / (correct + errors)) * 100;
+  const accuracy =
+    correct + errors === 0 ? 0 : (correct / (correct + errors)) * 100;
   const coverage = (userWords.length / targetWords.length) * 100;
 
   updateStats(accuracy, errors, coverage);
@@ -122,6 +159,7 @@ function compareUserInput() {
 }
 
 function updateStats(accuracy, errors, coverage) {
+  if (!statAccuracyEl || !statErrorsEl || !statCoverageEl) return;
   statAccuracyEl.textContent = `Accuracy: ${accuracy.toFixed(1)}%`;
   statErrorsEl.textContent = `Errors: ${errors}`;
   statCoverageEl.textContent = `Coverage: ${coverage.toFixed(1)}%`;
@@ -129,17 +167,24 @@ function updateStats(accuracy, errors, coverage) {
 
 function updateOverallProgress(score) {
   const clamped = Math.max(0, Math.min(100, score));
-  progressFillEl.style.width = clamped + "%";
-  statusSummaryEl.textContent = `${clamped.toFixed(
-    0
-  )}% memorized (rough estimate)`;
+  if (progressFillEl) {
+    progressFillEl.style.width = clamped + "%";
+  }
+  if (statusSummaryEl) {
+    const creedLabel = creeds[currentCreedKey].label;
+    statusSummaryEl.textContent = `${clamped.toFixed(
+      0
+    )}% memorized (${creedLabel})`;
+  }
 }
 
 if (userInputEl) {
   userInputEl.addEventListener("input", compareUserInput);
 }
 
-// --- Line Order Game ---
+// ─────────────────────────────────────
+// LINE ORDER GAME
+// ─────────────────────────────────────
 let currentLineIndex = 0;
 let streakCorrect = 0;
 
@@ -153,9 +198,12 @@ function shuffleArray(arr) {
 }
 
 function renderLineGame() {
+  if (!lineGameEl) return;
+
   currentLineIndex = 0;
   streakCorrect = 0;
-  const shuffled = shuffleArray(creedLines);
+  const lines = getCurrentLines();
+  const shuffled = shuffleArray(lines);
   lineGameEl.innerHTML = "";
   shuffled.forEach((line) => {
     const btn = document.createElement("button");
@@ -168,22 +216,26 @@ function renderLineGame() {
 }
 
 function handleLineClick(btn, line) {
-  const correctLine = creedLines[currentLineIndex];
+  const lines = getCurrentLines();
+  const correctLine = lines[currentLineIndex];
   if (line === correctLine) {
     btn.classList.remove("wrong");
     btn.classList.add("correct");
     btn.disabled = true;
     currentLineIndex++;
     streakCorrect++;
-    if (currentLineIndex >= creedLines.length) {
-      lineProgressEl.textContent =
-        "Perfect! You completed the creed in order. Do it again!";
+    if (currentLineIndex >= lines.length) {
+      if (lineProgressEl) {
+        lineProgressEl.textContent =
+          "Perfect! You completed the creed in order. Do it again!";
+      }
       updateOverallProgress(100);
     } else {
       updateLineProgress();
       const progressScore =
-        (currentLineIndex / creedLines.length) * 100 * 0.7 +
-        Math.min(streakCorrect, creedLines.length) * (30 / creedLines.length);
+        (currentLineIndex / lines.length) * 100 * 0.7 +
+        Math.min(streakCorrect, lines.length) *
+          (30 / lines.length);
       updateOverallProgress(progressScore);
     }
   } else {
@@ -194,9 +246,11 @@ function handleLineClick(btn, line) {
 }
 
 function updateLineProgress(wrong = false) {
+  if (!lineProgressEl) return;
+  const lines = getCurrentLines();
   const done = currentLineIndex;
-  const total = creedLines.length;
-  const nextLine = creedLines[currentLineIndex] || "Finished!";
+  const total = lines.length;
+  const nextLine = lines[currentLineIndex] || "Finished!";
   if (wrong) {
     lineProgressEl.textContent = `Wrong line. Next correct line should be: "${nextLine}"`;
   } else {
@@ -208,7 +262,9 @@ if (btnResetLines) {
   btnResetLines.addEventListener("click", renderLineGame);
 }
 
-// --- Show / hide full text hint ---
+// ─────────────────────────────────────
+// SHOW / HIDE FULL TEXT HINT
+// ─────────────────────────────────────
 if (btnShowAnswer) {
   btnShowAnswer.addEventListener("click", () => {
     showAnswer = !showAnswer;
@@ -224,5 +280,34 @@ if (btnShowAnswer) {
   });
 }
 
-// Initialize line game
+// ─────────────────────────────────────
+// CREED SWITCH HANDLER
+// ─────────────────────────────────────
+if (creedSelectEl) {
+  creedSelectEl.addEventListener("change", (e) => {
+    const value = e.target.value;
+    if (creeds[value]) {
+      currentCreedKey = value;
+
+      // Re-render study mode & line game with new creed
+      renderStudy();
+      renderLineGame();
+
+      // Reset typing area and stats
+      if (userInputEl) userInputEl.value = "";
+      if (compareOutputEl) {
+        compareOutputEl.textContent =
+          "Start typing and I'll compare it to the official creed.";
+      }
+      updateStats(0, 0, 0);
+      updateOverallProgress(0);
+    }
+  });
+}
+
+// ─────────────────────────────────────
+// INITIALIZE
+// ─────────────────────────────────────
+renderStudy();
 renderLineGame();
+updateOverallProgress(0);
