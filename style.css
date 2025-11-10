@@ -199,6 +199,63 @@ h1 span.patch {
   line-height: 1.5;
 }
 
+/* Songs trainer styles */
+.song-block {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.song-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.song-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  opacity: 0.9;
+}
+
+.song-block audio {
+  width: 100%;
+  margin: 0.35rem 0 0.4rem;
+}
+
+.song-controls {
+  margin-bottom: 0.4rem;
+}
+
+/* small variant of .btn */
+.btn.small {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+}
+
+/* lyrics block */
+.song-lyrics {
+  display: none; /* hidden by default */
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 0.5rem;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  padding: 0.5rem 0.75rem;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+
 /* Study mode lines */
 .creed-line {
   padding: 0.15rem 0;
@@ -507,6 +564,16 @@ h1 span.patch {
 
   .creed-switch select {
     width: 100%;
+  }
+
+  .song-block {
+    padding: 0.65rem;
+  }
+
+  .song-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
   }
 }
 
