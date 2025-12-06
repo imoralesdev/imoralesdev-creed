@@ -442,11 +442,13 @@ h1 span.patch {
   border: 1px solid rgba(102, 252, 241, 0.4);
   transition: 0.2s;
   min-height: 40px;
+  text-decoration: none;
 }
 
 .btn:hover {
   background: rgba(102, 252, 241, 0.16);
   transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .btn.secondary {
