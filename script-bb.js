@@ -550,6 +550,23 @@ const questions = [
   }
 ];
 
+// --- Shuffle helper and active question set ---
+
+function shuffleQuestions(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// This will be the actual order used in the quiz (randomized)
+let quizQuestions = [];
+
+function resetQuestionOrder() {
+  quizQuestions = shuffleQuestions(questions);
+}
 // ====== ONE-BY-ONE QUIZ LOGIC ======
 
 const quizContainer = document.getElementById("quiz-container");
@@ -566,12 +583,12 @@ let answeredCount = 0;
 let questionGraded = false;
 
 function updateStatusBar() {
-  progressEl.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
+  progressEl.textContent = `Question ${currentIndex + 1} of ${quizQuestions.length}`;
   scoreSoFarEl.textContent = `Correct so far: ${correctCount}`;
 }
 
 function renderCurrentQuestion() {
-  const q = questions[currentIndex];
+  const q = quizQuestions[currentIndex];
 
   quizContainer.innerHTML = `
     <article class="question-card">
@@ -628,7 +645,7 @@ function getSelectedAnswer(index) {
 function gradeCurrentQuestion() {
   if (questionGraded) return;
 
-  const q = questions[currentIndex];
+  const q = quizQuestions[currentIndex];
   const selected = getSelectedAnswer(currentIndex);
 
   if (selected === null) {
@@ -691,7 +708,7 @@ function gradeCurrentQuestion() {
 
 function showFinalResults() {
   quizContainer.innerHTML = "";
-  const total = questions.length;
+  const total = quizQuestions.length;
   const scorePercent = Math.round((correctCount / total) * 100);
 
   resultBox.classList.add("visible");
@@ -709,16 +726,17 @@ function showFinalResults() {
 function goToNextQuestion() {
   if (!questionGraded) return;
 
-  if (currentIndex < questions.length - 1) {
-    currentIndex++;
-    renderCurrentQuestion();
-    nextBtn.textContent = "Next Question";
-  } else {
-    showFinalResults();
-  }
+  if (currentIndex < quizQuestions.length - 1) {
+  currentIndex++;
+  renderCurrentQuestion();
+  nextBtn.textContent = "Next Question";
+} else {
+  showFinalResults();
+}
 }
 
 function restartQuiz() {
+  resetQuestionOrder();          
   currentIndex = 0;
   correctCount = 0;
   answeredCount = 0;
@@ -732,6 +750,7 @@ function restartQuiz() {
 }
 
 // Initial render
+resetQuestionOrder();
 renderCurrentQuestion();
 
 // Event listeners
