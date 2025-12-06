@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Website</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+  <div class="quiz-app">
+    <header class="quiz-header">
+      <h1>15th Signal Brigade Blue Book Quiz</h1>
+      <p>One-question-at-a-time study mode for your Blue Book exam.</p>
+    </header>
+
+    <main>
+      <section class="quiz-status">
+        <span id="quiz-progress"></span>
+        <span id="quiz-score-so-far"></span>
+      </section>
+
+      <section id="quiz-container"></section>
+
+      <div class="quiz-actions">
+        <button id="submit-answer" type="button">Check Answer</button>
+        <button id="next-question" type="button" disabled>Next Question</button>
+        <button id="restart-quiz" type="button">Restart Quiz</button>
+      </div>
+
+      <section id="quiz-result" class="quiz-result" aria-live="polite"></section>
+    </main>
+
+    <footer class="quiz-footer">
+      <p>
+        All questions are based on 15th Signal Brigade Blue Book topics and
+        basic land navigation terrain features (5 major / 3 minor).
+      </p>
+    </footer>
+  </div>
+  <script src="/assets/script.js"></script>
+</body>
+
+</html>
