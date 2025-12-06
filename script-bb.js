@@ -547,6 +547,873 @@ const questions = [
     correctIndex: 1,
     explanation:
       "A cliff is a vertical or near-vertical slope represented by very close or touching contour lines."
+  },
+    // ===== LAND NAV / MAP READING =====
+  {
+    category: "Land Nav",
+    question: "Which list correctly shows the 5 major terrain features?",
+    options: [
+      "Hill, Valley, Saddle, Ridge, Depression",
+      "Hill, Valley, Ridge, Draw, Spur",
+      "Hill, Ridge, Draw, Spur, Cliff",
+      "Valley, Ridge, Draw, Spur, Cliff"
+    ],
+    correctIndex: 0,
+    explanation:
+      "The 5 major terrain features are Hill, Valley, Saddle, Ridge, and Depression."
+  },
+  {
+    category: "Land Nav",
+    question: "Which list correctly shows the 3 minor terrain features?",
+    options: [
+      "Hill, Ridge, Valley",
+      "Draw, Spur, Cliff",
+      "Valley, Saddle, Depression",
+      "Hill, Valley, Ridge"
+    ],
+    correctIndex: 1,
+    explanation:
+      "The 3 minor terrain features are Draw, Spur, and Cliff."
+  },
+  {
+    category: "Land Nav",
+    question: "What are the six basic colors on a military map?",
+    options: [
+      "Red-Brown, Red, Brown, Green, Blue, Black",
+      "Red, Orange, Yellow, Green, Blue, Black",
+      "Red, Brown, Yellow, Green, Blue, White",
+      "Red-Brown, Red, Green, Blue, Black, White"
+    ],
+    correctIndex: 0,
+    explanation:
+      "The six standard colors on a military map are Red-Brown, Red, Brown, Green, Blue, and Black."
+  },
+  {
+    category: "Land Nav",
+    question: "Which TC covers map reading and land navigation?",
+    options: [
+      "TC 3-22.9",
+      "TC 3-25.26",
+      "TC 7-22",
+      "TC 3-20.0"
+    ],
+    correctIndex: 1,
+    explanation:
+      "TC 3-25.26 covers Map Reading and Land Navigation."
+  },
+
+  // ===== ARMY REGULATIONS / POLICY =====
+  {
+    category: "Regulations",
+    question: "What does AR 600-20 cover?",
+    options: [
+      "Rifle marksmanship",
+      "Army Command Policy, including SHARP and EO",
+      "Drill and ceremony",
+      "Physical readiness training"
+    ],
+    correctIndex: 1,
+    explanation:
+      "AR 600-20 is Army Command Policy and includes SHARP and EO policy."
+  },
+  {
+    category: "Regulations",
+    question: "What does AR 600-25 cover?",
+    options: [
+      "Physical fitness standards",
+      "Salutes, honors, and courtesies",
+      "Map reading and land navigation",
+      "Rifle and carbine"
+    ],
+    correctIndex: 1,
+    explanation:
+      "AR 600-25 covers Salutes, Honors, and Courtesies."
+  },
+  {
+    category: "Regulations",
+    question:
+      "Sexual Harassment/Assault Response and Prevention (SHARP) is primarily covered in which regulations?",
+    options: [
+      "AR 600-52 and AR 600-20",
+      "AR 670-1 and AR 600-9",
+      "AR 350-1 and AR 600-9",
+      "TC 3-22.9 and TC 3-25.26"
+    ],
+    correctIndex: 0,
+    explanation:
+      "SHARP is covered under AR 600-52 and AR 600-20."
+  },
+  {
+    category: "Regulations",
+    question: "What does TC 3-22.9 cover?",
+    options: [
+      "Drill and ceremony",
+      "Rifle and carbine",
+      "Physical readiness training",
+      "Map reading and land navigation"
+    ],
+    correctIndex: 1,
+    explanation:
+      "TC 3-22.9 covers Rifle and Carbine marksmanship."
+  },
+  {
+    category: "Regulations",
+    question: "What does TCCC stand for?",
+    options: [
+      "Tactical Casualty Combat Care",
+      "Tactical Combat Casualty Care",
+      "Tactical Casualty Control Course",
+      "Training Combat Casualty Care"
+    ],
+    correctIndex: 1,
+    explanation:
+      "TCCC stands for Tactical Combat Casualty Care."
+  },
+  {
+    category: "Regulations",
+    question: "What does SMCT stand for?",
+    options: [
+      "Soldier Manual of Common Tasks",
+      "Soldier Mission and Combat Training",
+      "Standard Military Combat Tasks",
+      "Standard Mission Combat Training"
+    ],
+    correctIndex: 0,
+    explanation:
+      "SMCT stands for Soldier Manual of Common Tasks."
+  },
+
+  // ===== SHARP & EO =====
+  {
+    category: "SHARP / EO",
+    question: "What are the two options for SHARP sexual assault reporting?",
+    options: [
+      "Formal and Informal",
+      "Open and Closed",
+      "Restricted and Unrestricted",
+      "Anonymous and Non-Anonymous"
+    ],
+    correctIndex: 2,
+    explanation:
+      "SHARP sexual assault reporting options are Restricted and Unrestricted."
+  },
+  {
+    category: "SHARP / EO",
+    question:
+      "Which statement best describes UNRESTRICTED reporting for SHARP sexual assault?",
+    options: [
+      "No investigation and no services are allowed",
+      "Allows a formal investigation and access to legal and command support",
+      "Only medical treatment is allowed, with no documentation",
+      "It is an anonymous report that disappears after 30 days"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Unrestricted reporting allows command or law enforcement to investigate and provides full services and legal support."
+  },
+  {
+    category: "SHARP / EO",
+    question:
+      "Which statement best describes RESTRICTED reporting for SHARP sexual assault?",
+    options: [
+      "Starts an immediate formal investigation",
+      "Allows confidential disclosure to specific individuals without starting an investigation",
+      "Reports go straight to the media",
+      "Restricted reports are not allowed in the Army"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Restricted reporting allows victims to confidentially disclose the incident without starting an official investigation."
+  },
+  {
+    category: "SHARP / EO",
+    question: "What are the two types of EO complaints?",
+    options: [
+      "Restricted and Unrestricted",
+      "Formal and Informal",
+      "Verbal and Written",
+      "Anonymous and Non-Anonymous"
+    ],
+    correctIndex: 1,
+    explanation:
+      "EO complaint types are Formal and Informal."
+  },
+  {
+    category: "SHARP / EO",
+    question: "Is pregnancy mentioned under the Equal Opportunity (EO) program?",
+    options: ["Yes", "No"],
+    correctIndex: 0,
+    explanation:
+      "Yes. Pregnancy is addressed under EO protections."
+  },
+  {
+    category: "SHARP / EO",
+    question: "What does the acronym SHARP stand for?",
+    options: [
+      "Sexual Harassment/Assault Response and Prevention",
+      "Soldier Health and Readiness Program",
+      "Standard Harassment and Resolution Policy",
+      "Sexual Harassment and Rights Program"
+    ],
+    correctIndex: 0,
+    explanation:
+      "SHARP = Sexual Harassment/Assault Response and Prevention."
+  },
+  {
+    category: "SHARP / EO",
+    question: "What are the two types of SHARP sexual harassment complaints?",
+    options: [
+      "Restricted and Unrestricted",
+      "Formal and Informal",
+      "Open and Closed",
+      "Anonymous and Named"
+    ],
+    correctIndex: 1,
+    explanation:
+      "SHARP sexual harassment complaints can be Formal or Informal."
+  },
+
+  // ===== FIRST AID / TACTICAL =====
+  {
+    category: "First Aid",
+    question: "What are the basic ways to assist with severe bleeding?",
+    options: [
+      "Direct pressure, pressure dressing, apply a tourniquet",
+      "Apply ice, elevate the limb, give water",
+      "Massage the wound, remove clothing, give food",
+      "Use only a tourniquet immediately"
+    ],
+    correctIndex: 0,
+    explanation:
+      "Bleeding control priorities: direct pressure, pressure dressing, and if needed, a tourniquet."
+  },
+  {
+    category: "First Aid",
+    question: "What does ACE stand for in suicide intervention?",
+    options: [
+      "Act, Call, Escort",
+      "Ask, Care, Escort",
+      "Alert, Check, Escort",
+      "Assess, Confirm, Encourage"
+    ],
+    correctIndex: 1,
+    explanation:
+      "ACE = Ask, Care, Escort."
+  },
+
+  // ===== WEAPONS / AMMO =====
+  {
+    category: "Weapons",
+    question:
+      "What are the two general types of corrective action with weapons?",
+    options: [
+      "Immediate action and Remedial action",
+      "Primary action and Secondary action",
+      "Clear action and Safe action",
+      "Direct action and Indirect action"
+    ],
+    correctIndex: 0,
+    explanation:
+      "Corrective actions are categorized as Immediate Action and Remedial Action."
+  },
+  {
+    category: "Weapons",
+    question:
+      "According to your study guide, how many different types of ammunition are there?",
+    options: ["5", "7", "8", "10"],
+    correctIndex: 3,
+    explanation:
+      "The guide notes 10 different types of ammunition."
+  },
+  {
+    category: "Weapons",
+    question:
+      "How many types of 5.56mm ammunition are officially listed in your study guide?",
+    options: ["3", "5", "7", "10"],
+    correctIndex: 2,
+    explanation:
+      "The guide states there are 7 types of 5.56mm ammunition."
+  },
+
+  // ===== UNIFORMS / APPEARANCE =====
+  {
+    category: "Uniforms",
+    question:
+      "How many rows and ribbons are worn on the Class B uniform according to your guide?",
+    options: [
+      "One row, three ribbons",
+      "Two rows, six ribbons",
+      "Three rows, nine ribbons",
+      "Four rows, twelve ribbons"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Class B uniform: two rows with six ribbons."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "Which of the following is NOT authorized with the uniform according to your guide?",
+    options: [
+      "Spandex shorts",
+      "Bandanas",
+      "Pearl necklaces",
+      "All of the above"
+    ],
+    correctIndex: 3,
+    explanation:
+      "The guide notes: do not wear Spandex shorts, bandanas, or pearls with the uniform."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "When wearing the uniform, in which direction must headgear be worn?",
+    options: [
+      "Forward",
+      "Backward",
+      "To the side",
+      "Any direction is fine"
+    ],
+    correctIndex: 0,
+    explanation:
+      "All headwear must be worn forward in uniform."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "While wearing civilian clothes, where should Soldiers remove their hats as a matter of courtesy?",
+    options: [
+      "Outdoors at all times",
+      "Indoors in places like dining facilities, movie theaters, or chapels",
+      "Only inside barracks rooms",
+      "Only in vehicles"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Soldiers should remove civilian hats indoors in places like DFACs, theaters, and chapels."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "Which Starbucks locations are permitted for Phase VI Soldiers according to your guide?",
+    options: [
+      "Only the main post Starbucks",
+      "Troop Store and PX Starbucks",
+      "Off-post Starbucks only",
+      "Any Starbucks on or off post"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Phase VI Soldiers are allowed to use Starbucks at the Troop Store and PX."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "What is the maximum diameter authorized for female earrings in uniform?",
+    options: [
+      "4 millimeters (about 1/8 inch)",
+      "6 millimeters (about 1/4 inch)",
+      "8 millimeters (about 3/8 inch)",
+      "10 millimeters (about 1/2 inch)"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Female earrings may be up to 6 mm, approximately 1/4 inch in diameter."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "Can Soldiers wear eyelash extensions in the Army according to your guide?",
+    options: [
+      "Yes, any time in garrison",
+      "Yes, only during weekends",
+      "Only if medically prescribed",
+      "Never under any circumstances"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Eyelash extensions are not authorized unless medically prescribed."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "For the ASU, how is the name plate placed on the right pocket flap?",
+    options: [
+      "Centered on the button",
+      "Centered on the flap between the top of the button and the top of the pocket",
+      "1 inch above the pocket flap",
+      "Aligned with the left pocket"
+    ],
+    correctIndex: 1,
+    explanation:
+      "ASU name plate: centered on the right pocket flap between the top of the button and the top of the pocket."
+  },
+  {
+    category: "Uniforms",
+    question:
+      "According to your guide, where is the U.S. Army plate placed on the uniform?",
+    options: [
+      "1/4 inch above the pocket",
+      "Centered on the pocket",
+      "5/8 inch above the label notch",
+      "Aligned with the nameplate"
+    ],
+    correctIndex: 2,
+    explanation:
+      "The U.S. Army plate is placed 5/8 inch above the label notch."
+  },
+
+  // ===== TATTOO POLICY (DIRECTIVE 2022-09) =====
+  {
+    category: "Tattoos",
+    question:
+      "According to Army Directive 2022-09, how many visible tattoos are allowed on each hand?",
+    options: [
+      "None are allowed on the hand",
+      "One visible tattoo per hand, not extending to fingers or wrist",
+      "Two tattoos per hand of any size",
+      "Only ring tattoos are allowed"
+    ],
+    correctIndex: 1,
+    explanation:
+      "One visible tattoo per hand is allowed, not extending to fingers or wrist, plus ring and between-finger tattoos with restrictions."
+  },
+  {
+    category: "Tattoos",
+    question:
+      "Under the updated tattoo policy, what is allowed on the back of the neck?",
+    options: [
+      "No tattoos are allowed anywhere on the neck",
+      "One tattoo up to 2 inches in size",
+      "Multiple tattoos of any size",
+      "Only unit crests"
+    ],
+    correctIndex: 1,
+    explanation:
+      "One tattoo up to 2 inches is allowed on the back of the neck."
+  },
+  {
+    category: "Tattoos",
+    question:
+      "Under the updated tattoo policy, what is allowed behind the ear?",
+    options: [
+      "No tattoos are allowed behind the ear",
+      "One tattoo up to 1 inch that does not extend past the earlobe",
+      "Multiple tattoos up to 2 inches",
+      "Only ring tattoos"
+    ],
+    correctIndex: 1,
+    explanation:
+      "One tattoo up to 1 inch is allowed behind the ear and may not extend past the earlobe."
+  },
+
+  // ===== PT / DRILLS / H2F =====
+  {
+    category: "PT / H2F",
+    question: "What does H2F stand for in the Army fitness system?",
+    options: [
+      "Holistic Health and Fitness",
+      "High-Intensity Health and Fitness",
+      "Healthy Habits and Fitness",
+      "Holistic Human Fitness"
+    ],
+    correctIndex: 0,
+    explanation:
+      "H2F stands for Holistic Health and Fitness."
+  },
+  {
+    category: "PT / H2F",
+    question: "How many stretches are in the Recovery Drill?",
+    options: ["5", "6", "8", "10"],
+    correctIndex: 2,
+    explanation:
+      "There are 8 stretches in the Recovery Drill."
+  },
+  {
+    category: "PT / H2F",
+    question:
+      "Which list correctly shows all stretches in the Recovery Drill?",
+    options: [
+      "Overhead Arm Pull, Rear Lunge, Extend and Flex, Thigh Stretch, Single-Leg Over, Groin Stretch, Calf Stretch, Hamstring Stretch",
+      "Power Jump, V-Up, Mountain Climber, Leg-Tuck and Twist, Single-Leg Push-Up",
+      "Turn and Lunge, Supine Bicycle, Half Jack, Swimmer, 8-count T Push-Up",
+      "Deadlift, Hand Release Push-Ups, Sprint Drag Carry, Plank, 2-mile Run"
+    ],
+    correctIndex: 0,
+    explanation:
+      "Recovery Drill stretches: Overhead Arm Pull, Rear Lunge, Extend and Flex, Thigh Stretch, Single-Leg Over, Groin Stretch, Calf Stretch, Hamstring Stretch."
+  },
+  {
+    category: "PT / H2F",
+    question: "How many ACFT events are listed in your study guide, and in what order?",
+    options: [
+      "3 events: Deadlift, Plank, 2-mile Run",
+      "4 events: Deadlift, Hand Release Push-Ups, Sprint Drag Carry, 2-mile Run",
+      "5 events: Deadlift, Hand Release Push-Ups, Sprint Drag Carry, Plank, 2-mile Run",
+      "6 events: Deadlift, Standing Power Throw, Hand Release Push-Ups, Sprint Drag Carry, Plank, 2-mile Run"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Your guide lists 5 ACFT events in order: Deadlift, Hand Release Push-Ups, Sprint Drag Carry, Plank, 2-mile Run."
+  },
+  {
+    category: "PT / H2F",
+    question:
+      "Which exercises are listed in Conditioning Drill 1 (CD1) in order?",
+    options: [
+      "Power Jump, V-Up, Mountain Climber, Leg-Tuck and Twist, Single-Leg Push-Up",
+      "Turn and Lunge, Supine Bicycle, Half Jack, Swimmer, 8-count T Push-Up",
+      "Straight-Arm Pull, Heel Hook, Pull-Up, Leg-Tuck, Alternating Grip Pull-Up",
+      "Overhead Arm Pull, Rear Lunge, Extend and Flex, Thigh Stretch"
+    ],
+    correctIndex: 0,
+    explanation:
+      "CD1: Power Jump, V-Up, Mountain Climber, Leg-Tuck and Twist, Single-Leg Push-Up."
+  },
+  {
+    category: "PT / H2F",
+    question:
+      "Which exercises are listed in Conditioning Drill 2 (CD2) in order?",
+    options: [
+      "Turn and Lunge, Supine Bicycle, Half Jack, Swimmer, 8-count T Push-Up",
+      "Power Jump, V-Up, Mountain Climber, Leg-Tuck and Twist, Single-Leg Push-Up",
+      "Straight-Arm Pull, Heel Hook, Pull-Up, Leg-Tuck, Alternating Grip Pull-Up",
+      "Overhead Arm Pull, Rear Lunge, Extend and Flex, Thigh Stretch"
+    ],
+    correctIndex: 0,
+    explanation:
+      "CD2: Turn and Lunge, Supine Bicycle, Half Jack, Swimmer, 8-count T Push-Up."
+  },
+  {
+    category: "PT / H2F",
+    question:
+      "Which of the following are listed as climbing drill exercises in your guide?",
+    options: [
+      "Straight-Arm Pull/Flexed Arm Hang, Heel Hook, Pull-Up, Leg-Tuck, Alternating Grip Pull-Up",
+      "Power Jump, V-Up, Mountain Climber, Single-Leg Push-Up",
+      "Turn and Lunge, Supine Bicycle, Swimmer",
+      "Overhead Arm Pull, Groin Stretch, Hamstring Stretch"
+    ],
+    correctIndex: 0,
+    explanation:
+      "Climbing drills: Straight-Arm Pull/Flexed Arm Hang, Heel Hook, Pull-Up, Leg-Tuck, Alternating Grip Pull-Up."
+  },
+  {
+    category: "PT / H2F",
+    question: "According to your guide, how many firing positions are there?",
+    options: ["3", "4", "5", "6"],
+    correctIndex: 2,
+    explanation:
+      "Your guide states there are 5 firing positions."
+  },
+
+  // ===== RANKS / FORMS / PROGRAMS =====
+  {
+    category: "Ranks / Forms",
+    question: "What grade and rank correspond to O-7 in the U.S. Army?",
+    options: [
+      "O-7: Major General",
+      "O-7: Brigadier General",
+      "O-7: Lieutenant General",
+      "O-7: General"
+    ],
+    correctIndex: 1,
+    explanation:
+      "O-7 is Brigadier General."
+  },
+  {
+    category: "Ranks / Forms",
+    question: "What grade and rank correspond to O-8 in the U.S. Army?",
+    options: [
+      "O-8: Brigadier General",
+      "O-8: Major General",
+      "O-8: Lieutenant General",
+      "O-8: General"
+    ],
+    correctIndex: 1,
+    explanation:
+      "O-8 is Major General."
+  },
+  {
+    category: "Ranks / Forms",
+    question: "What grade and rank correspond to O-9 in the U.S. Army?",
+    options: [
+      "O-9: Brigadier General",
+      "O-9: Major General",
+      "O-9: Lieutenant General",
+      "O-9: General"
+    ],
+    correctIndex: 2,
+    explanation:
+      "O-9 is Lieutenant General."
+  },
+  {
+    category: "Ranks / Forms",
+    question:
+      "According to your guide, how many NCO ranks are there (from CPL up to SMA)?",
+    options: ["7", "8", "9", "10"],
+    correctIndex: 2,
+    explanation:
+      "Your guide lists 9 NCO ranks: CPL, SGT, SSG, SFC, MSG, 1SG, SGM, CSM, SMA."
+  },
+  {
+    category: "Ranks / Forms",
+    question:
+      "What is the name of the form used as the promotion point worksheet in your guide?",
+    options: [
+      "DA Form 3355",
+      "DD Form 2983",
+      "I-PSSA",
+      "DA Form 705"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Your guide refers to the promotion point worksheet as I-PSSA."
+  },
+  {
+    category: "Ranks / Forms",
+    question: "Which form pertains to Army sponsorship?",
+    options: [
+      "DA Form 705",
+      "DA Form 5434",
+      "DA Form 5500",
+      "DD Form 2983"
+    ],
+    correctIndex: 1,
+    explanation:
+      "DA Form 5434 is used for Army sponsorship."
+  },
+  {
+    category: "Ranks / Forms",
+    question:
+      "Which forms are used for Army body fat assessments according to your guide?",
+    options: [
+      "DA Form 705 for both males and females",
+      "DA Form 5500 for females, DA Form 5501 for males",
+      "DA Form 5501 for females, DA Form 5500 for males",
+      "DD Form 2983 for both"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Body fat: DA Form 5501 for females, DA Form 5500 for males."
+  },
+  {
+    category: "Ranks / Forms",
+    question: "What does DD Form 2983 cover?",
+    options: [
+      "Army physical fitness test scorecard",
+      "Recruit/trainee prohibited activities acknowledgment",
+      "Army sponsorship",
+      "Promotion point worksheet"
+    ],
+    correctIndex: 1,
+    explanation:
+      "DD Form 2983 is the Recruit/Trainee Prohibited Activities Acknowledgment."
+  },
+  {
+    category: "Ranks / Forms",
+    question: "What is the Army’s birthday?",
+    options: [
+      "June 14th",
+      "July 4th",
+      "November 11th",
+      "September 18th"
+    ],
+    correctIndex: 0,
+    explanation:
+      "The Army’s birthday is June 14th (1775)."
+  },
+  {
+    category: "Ranks / Forms",
+    question:
+      "According to your guide, what is the off-post radius limit for Soldiers?",
+    options: ["10 miles", "20 miles", "30 miles", "50 miles"],
+    correctIndex: 2,
+    explanation:
+      "Your guide states a 30-mile off-post radius."
+  },
+  {
+    category: "Programs",
+    question:
+      "Which Army program is correctly matched with its purpose: AER?",
+    options: [
+      "Army Emergency Relief – Financial assistance to Soldiers and families",
+      "Army Emergency Relief – Physical fitness program",
+      "Army Emergency Relief – Better opportunities for single Soldiers",
+      "Army Emergency Relief – Equal opportunity program"
+    ],
+    correctIndex: 0,
+    explanation:
+      "AER: Army Emergency Relief, provides financial assistance to Soldiers and families."
+  },
+  {
+    category: "Programs",
+    question:
+      "Which Army program is correctly matched with its purpose: BOSS?",
+    options: [
+      "Better Opportunities for Single Soldiers – Quality of life and recreation for single Soldiers",
+      "Basic Operations for Soldier Safety – Safety inspections",
+      "Brigade Operations Support System – Staff planning",
+      "Battlefield Operations Support System – Tactical network"
+    ],
+    correctIndex: 0,
+    explanation:
+      "BOSS: Better Opportunities for Single Soldiers, focuses on quality of life, recreation, and community involvement."
+  },
+
+  // ===== HISTORY / MOTTO / D&C =====
+  {
+    category: "History",
+    question:
+      "Who introduced drill and ceremony into the U.S. Army?",
+    options: [
+      "George Washington",
+      "Baron von Steuben",
+      "Ulysses S. Grant",
+      "Dwight D. Eisenhower"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Baron von Steuben introduced drill and ceremony to the Continental Army."
+  },
+  {
+    category: "History",
+    question: "What is the U.S. Army’s motto?",
+    options: [
+      "Army Strong",
+      "Be All You Can Be",
+      "This We'll Defend",
+      "Duty, Honor, Country"
+    ],
+    correctIndex: 2,
+    explanation:
+      "The official motto is: “This We’ll Defend.”"
+  },
+  {
+    category: "History",
+    question:
+      "What is the first line of the Ordnance Creed according to your guide?",
+    options: [
+      "As an Ordnance Soldier of the United States Army...",
+      "I am an American Soldier...",
+      "I will always place the mission first...",
+      "I am a warrior and a member of a team..."
+    ],
+    correctIndex: 0,
+    explanation:
+      "The first line: “As an Ordnance Soldier of the United States Army...”"
+  },
+
+  // ===== BLUE BOOK / POLICY LETTERS / LOCAL =====
+  {
+    category: "Blue Book / Policy",
+    question:
+      "What does Policy Letter #15 cover according to your guide?",
+    options: [
+      "Physical training standards",
+      "Privileges and limitations for Soldiers in training",
+      "Tattoo and grooming standards",
+      "Leave and pass policies"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Policy Letter #15: Privileges and Limitations for Soldiers in Training."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "According to your guide, Phase V will perform barracks maintenance from 0900-1000 on weekends. Is this statement true or false?",
+    options: ["True", "False"],
+    correctIndex: 1,
+    explanation:
+      "The guide notes this statement as False."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "As a Phase V Soldier, can your family sign you out and act as your battle buddy, according to your guide?",
+    options: ["Yes", "No"],
+    correctIndex: 0,
+    explanation:
+      "Your guide states this is True: family can sign you out and act as your battle buddy for authorized passes."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "According to your guide, can you use your cellphone in the DFAC?",
+    options: ["Yes", "No"],
+    correctIndex: 1,
+    explanation:
+      "The guide states: you cannot use your cellphone at the DFAC."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "Who is the current Sergeant Major of the Army in your study guide?",
+    options: [
+      "SMA Daniel A. Dailey",
+      "SMA Michael R. Weimer",
+      "SMA Michael Grinston",
+      "SMA Julius W. Gates"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Your guide names SMA Michael R. Weimer as the Sergeant Major of the Army."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "If wearing headphones at the gym, the ear pads will not exceed what diameter at the widest point?",
+    options: [
+      "1 inch",
+      "1 1/2 inches",
+      "2 inches",
+      "3 inches"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Headphone ear pads must not exceed 1 1/2 inches in diameter."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "According to your guide, all tobacco products must be consumed inside authorized smoking areas, including chewing tobacco. True or false?",
+    options: ["True", "False"],
+    correctIndex: 0,
+    explanation:
+      "True. All tobacco products, including chewing tobacco, must be used only in authorized smoking areas."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "How many days can the First Sergeant (1SG) suspend phase privileges according to your guide?",
+    options: ["7 days", "10 days", "14 days", "21 days"],
+    correctIndex: 2,
+    explanation:
+      "The 1SG can suspend phase privileges for up to 14 days."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "While walking, which side should the senior NCO or senior Soldier walk on?",
+    options: ["Left side", "Right side", "Either side", "Behind the junior Soldier"],
+    correctIndex: 1,
+    explanation:
+      "The senior Soldier normally walks on the right side."
+  },
+  {
+    category: "Blue Book / Policy",
+    question:
+      "What is the off-post work order website mentioned in your guide?",
+    options: [
+      "www.armyworkorders.com",
+      "www.armyhelpdesk.com",
+      "www.armymaintenance.com",
+      "www.milsupport.com"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Work orders are submitted through www.armymaintenance.com."
   }
 ];
 
