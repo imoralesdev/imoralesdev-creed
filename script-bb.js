@@ -1432,7 +1432,9 @@ function shuffleQuestions(array) {
 let quizQuestions = [];
 
 function resetQuestionOrder() {
-  quizQuestions = shuffleQuestions(questions);
+  const shuffled = shuffleQuestions(questions);   // randomize full pool
+  const maxPerRound = 30;                         // 🔹 how many questions per round
+  quizQuestions = shuffled.slice(0, Math.min(maxPerRound, shuffled.length));
 }
 // ====== ONE-BY-ONE QUIZ LOGIC ======
 
